@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appNs="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id = "@+id/add_green"
+        android:icon = "@drawable/add_icon"
+        appNs:showAsAction = "always"/>
+
+    <item
+        android:id="@+id/add_blue"
+        android:icon="@drawable/add_blue"
+        appNs:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/clear"
+        android:icon="@drawable/clear_icon"
+        appNs:showAsAction="always"
+        />
+
+</menu>

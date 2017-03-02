@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_manual_add"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.pogchamp.vish.caloriecounter.manual_add"
+    android:background="@android:color/holo_blue_light"
+    >
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Food Name"
+        android:ems="10"
+        android:layout_marginTop="80dp"
+        android:id="@+id/manualFood"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Calories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:id="@+id/textView3"
+        android:textSize="25dp"
+        android:layout_below="@+id/manualFood"
+        android:layout_alignStart="@+id/textView" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Amount of cals"
+        android:ems="10"
+        android:id="@+id/manualCals"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignStart="@+id/manualFood"
+        android:layout_marginStart="26dp" />
+
+    <Button
+        android:text="Add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/manualCals"
+        android:layout_toEndOf="@+id/textView"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="33dp"
+        android:id="@+id/manual_add" />
+
+    <TextView
+        android:text="Food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:id="@+id/textView"
+        android:textSize="25dp"
+        android:layout_alignBaseline="@+id/manualFood"
+        android:layout_alignBottom="@+id/manualFood"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
