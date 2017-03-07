@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.pogchamp.vish.caloriecounter.manual_add"
-    android:background="@android:color/holo_blue_light"
+    android:background="@android:color/holo_orange_light"
     >
 
     <EditText

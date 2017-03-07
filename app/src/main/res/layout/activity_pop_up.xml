@@ -68,15 +68,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignEnd="@+id/textView6" />
 
-    <Button
-        android:text="Done!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/done"
-        android:layout_below="@+id/editText9"
-        android:layout_toEndOf="@+id/textView7"
-        android:layout_marginTop="102dp" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -87,4 +78,14 @@
         android:id="@+id/editText9"
         android:layout_below="@+id/textView7"
         android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Done!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/done"
+        android:layout_marginTop="102dp"
+        android:layout_below="@+id/editText9"
+        android:layout_toEndOf="@+id/textView7"
+        android:layout_marginStart="26dp" />
 </RelativeLayout>

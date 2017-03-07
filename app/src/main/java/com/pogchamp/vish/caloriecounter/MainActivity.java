@@ -56,11 +56,9 @@ public class MainActivity extends AppCompatActivity  {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(final MenuItem item) {
 
-        ListView lv = (ListView) findViewById(R.id.list);
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,food_list);
-        lv.setAdapter(arrayAdapter);
+
 
           switch(item.getItemId()) {
 
@@ -76,10 +74,14 @@ public class MainActivity extends AppCompatActivity  {
                   break;
 
               case R.id.add_green:
-                      popUp();
+                      popUpAuto(item);
+
                       break;
               case R.id.add_blue:
-                  Log.d("msg","WHAT IN THE ACTUAL FUCK IS GOING ON");
+
+                  item.setEnabled(false);
+                  //MANUAL ADDING
+                 // Log.d("msg","WHAT IN THE ACTUAL FUCK IS GOING ON");
 
                   relativeLayout = (RelativeLayout) findViewById(R.id.activity_main);
                   LayoutInflater layoutInflater2 = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -116,9 +118,11 @@ public class MainActivity extends AppCompatActivity  {
                           imm.hideSoftInputFromWindow(v.getWindowToken(),0);
                          //foodNames[counter] = foodManual.getText().toString();
                           //counter++;
-                          food_list.add(foodManual.getText().toString());
-                          arrayAdapter.notifyDataSetChanged();
+                          String cunt;
+                          cunt = foodManual.getText().toString();
+                          addElementToList(cunt);
 
+                    item.setEnabled(true);
                       }
                   });
 
@@ -129,6 +133,8 @@ public class MainActivity extends AppCompatActivity  {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
     @Override
     protected void onResume() {
@@ -166,9 +172,10 @@ public class MainActivity extends AppCompatActivity  {
 
     }
 
-    public void popUp(){
+    public void popUpAuto(final MenuItem item){
 
-
+        item.setEnabled(false);
+        
         relativeLayout = (RelativeLayout) findViewById(R.id.activity_main);
 
         LayoutInflater layoutInflater1 = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -204,6 +211,10 @@ public class MainActivity extends AppCompatActivity  {
                 int z = Integer.parseInt(y);
                 Log.d("FOOD NAME -------->", x);
                 Log.d("FOOD AMOUNT ------->", String.valueOf(z));
+
+                addElementToList(x);
+
+
 
                 switch(x){
 
@@ -313,9 +324,20 @@ public class MainActivity extends AppCompatActivity  {
 
                 calorieCounter.setText(numCals + "");
                 relativeLayout.removeView(view);
+                item.setEnabled(true);
             }
         });
 
+
+    }
+
+    public void addElementToList(String x){
+
+        ListView lv = (ListView) findViewById(R.id.list);
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,food_list);
+        lv.setAdapter(arrayAdapter);
+        food_list.add(x);
+        arrayAdapter.notifyDataSetChanged();
 
     }
 
